@@ -43,6 +43,16 @@ public class EnemyController : MonoBehaviour
             if (Vector3.Distance(transform.position, path.Points[currentPoint].position) < .01f)
                 currentPoint += 1;
         }
+        else
+        {
+            //transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime);
+            attackCounter -= Time.deltaTime;
+            if(attackCounter <= 0)
+            {
+                attackCounter = timeBetweenAttacks;
+                target.TakeDamage(damagePerAttack);
+            }
+        }
     }
     public void Setup(Castle newCastle, Path newPath)
     {
