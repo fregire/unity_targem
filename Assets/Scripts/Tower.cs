@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Tower : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Tower : MonoBehaviour
 
     public Collider[] CollidersInRange;
 
-    private List<EnemyController> enemiesInRange = new List<EnemyController>();
+    public List<EnemyController> EnemiesInRange = new List<EnemyController>();
 
     private float checkCounter;
 
@@ -28,10 +29,10 @@ public class Tower : MonoBehaviour
             checkCounter = CheckTime;
             CollidersInRange = Physics.OverlapSphere(transform.position, Range);
             
-            enemiesInRange.Clear();
+            EnemiesInRange.Clear();
             foreach (Collider col in CollidersInRange)
             {
-                enemiesInRange.Add(col.GetComponent<EnemyController>());
+                EnemiesInRange.Add(col.GetComponent<EnemyController>());
             }
         }
     }
