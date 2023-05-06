@@ -81,9 +81,8 @@ public class EnemyController : MonoBehaviour
             target.GetComponent<TowerHealthController>().TakeDamage(damagePerAttack);
         }
     }
-    /* public void Setup(TowerHealthController newTowerHealthController, Path newPath)
+    public void Setup(Path newPath)
     {
-        target = newTowerHealthController;
         path = newPath;
-    } */
+    } 
 }

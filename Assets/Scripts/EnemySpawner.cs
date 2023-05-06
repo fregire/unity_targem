@@ -13,8 +13,6 @@ public class EnemySpawner : MonoBehaviour
     private float spawnCounter;
 
     public int amountToSpawn = 15;
-
-    [FormerlySerializedAs("theCastle")] public TowerHealthController theTowerHealthController;
     public Path thePath;
 
     void Start()
@@ -31,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 spawnCounter = timeBetweenSpawns;
 
-                Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
+                Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation).Setup(thePath);
                 amountToSpawn --;
             }
         }
