@@ -5,16 +5,35 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int MoveSpeed;   
-    private Castle target;
+    private Tower target;
     private Path path;
     private int currentPoint;
+    public float AttackRange;
 
     private bool reachedEnd;
 
     private float attackCounter;
     public float timeBetweenAttacks, damagePerAttack;
-    
-    
+
+
+    private Tower findClosestTarget()
+    {
+        Tower[] targets = FindObjectsByType<Tower>(FindObjectsSortMode.None);
+        Tower chosenTarget = targets[0];
+        float minDistance = Vector3.Distance(transform.position, chosenTarget.transform.position);
+
+        for (var i = 1; i < targets.Length; i++)
+        {
+            var distance = Vector3.Distance(transform.position, targets[i].transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                chosenTarget = targets[i];
+            }
+        }
+
+        return chosenTarget;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +43,7 @@ public class EnemyController : MonoBehaviour
         }
         if (target == null)
         {
-            target = FindObjectOfType<Castle>();
+            target = findClosestTarget();
         }        
         
         attackCounter = timeBetweenAttacks;
@@ -33,30 +52,38 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool reachedEnd = currentPoint == path.Points.Length;
+        bool reachedPathEnd = currentPoint == path.Points.Length;
         
-        if (!reachedEnd)
+        if (!reachedPathEnd)
         {
             transform.LookAt(path.Points[currentPoint]);
             transform.position = Vector3.MoveTowards(transform.position, path.Points[currentPoint].position, MoveSpeed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, path.Points[currentPoint].position) < .01f)
                 currentPoint += 1;
+            
+            return;   
         }
-        else
+        
+        target = findClosestTarget();
+        bool reachedTargetEnd = Vector3.Distance(transform.position, target.transform.position) <= AttackRange;
+        if (!reachedTargetEnd)
         {
-            //transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime);
-            attackCounter -= Time.deltaTime;
-            if(attackCounter <= 0)
-            {
-                attackCounter = timeBetweenAttacks;
-                target.TakeDamage(damagePerAttack);
-            }
+            transform.LookAt(target.transform);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, MoveSpeed * Time.deltaTime);
+            return;
+        }
+        
+        attackCounter -= Time.deltaTime;
+        if(attackCounter <= 0)
+        {
+            attackCounter = timeBetweenAttacks;
+            target.GetComponent<TowerHealthController>().TakeDamage(damagePerAttack);
         }
     }
-    public void Setup(Castle newCastle, Path newPath)
+    /* public void Setup(TowerHealthController newTowerHealthController, Path newPath)
     {
-        target = newCastle;
+        target = newTowerHealthController;
         path = newPath;
-    }
+    } */
 }

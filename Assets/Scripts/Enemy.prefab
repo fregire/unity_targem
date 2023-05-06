@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
+  AttackRange: 2
   timeBetweenAttacks: 1
   damagePerAttack: 10
 --- !u!136 &1777492128666844142
@@ -1363,7 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820e9c8078ef7ac4a8ea0f70497b5320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalHealth: 100
+  TotalHealth: 10000
   HealthBar: {fileID: 995293118}
 --- !u!1 &3315906018724031638
 GameObject:

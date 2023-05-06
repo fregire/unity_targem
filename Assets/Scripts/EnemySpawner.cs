@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
     public int amountToSpawn = 15;
 
-    public Castle theCastle;
+    [FormerlySerializedAs("theCastle")] public TowerHealthController theTowerHealthController;
     public Path thePath;
 
     void Start()
@@ -30,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 spawnCounter = timeBetweenSpawns;
 
-                Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation).Setup(theCastle, thePath);
+                Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
                 amountToSpawn --;
             }
         }
