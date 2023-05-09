@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 public class EnemySpawner : MonoBehaviour
 {
     public EnemyController enemyToSpawn;
-
     public Transform spawnPoint;
 
     public float timeBetweenSpawns;

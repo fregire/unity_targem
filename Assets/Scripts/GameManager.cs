@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Tower[] Towers;
+    public float RewardPerEnemy;
+    public float CurrentCoinsAmount;
 
     private bool towersDestroyed;
 
@@ -34,6 +36,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void HandleDestroyedEnemy(EnemyController enemy)
+    {
+        CurrentCoinsAmount += RewardPerEnemy;
+    }
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
