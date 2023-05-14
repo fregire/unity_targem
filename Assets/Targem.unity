@@ -3949,6 +3949,8 @@ MonoBehaviour:
   UpgradeDamageAmount: 10
   UpgradeHealthAmount: 0
   UpgradeAttackSpeedAmount: 1
+  Price: 10
+  GameManager: {fileID: 200073376}
   Button: {fileID: 776226545}
 --- !u!114 &776226545
 MonoBehaviour:
@@ -5740,6 +5742,8 @@ MonoBehaviour:
   UpgradeDamageAmount: 0
   UpgradeHealthAmount: 100
   UpgradeAttackSpeedAmount: 1
+  Price: 10
+  GameManager: {fileID: 200073376}
   Button: {fileID: 994860950}
 --- !u!114 &994860950
 MonoBehaviour:
@@ -10884,6 +10888,8 @@ MonoBehaviour:
   UpgradeDamageAmount: 0
   UpgradeHealthAmount: 0
   UpgradeAttackSpeedAmount: 1.5
+  Price: 10
+  GameManager: {fileID: 200073376}
   Button: {fileID: 1825455769}
 --- !u!114 &1825455769
 MonoBehaviour:

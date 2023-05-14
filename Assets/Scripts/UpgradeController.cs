@@ -13,6 +13,8 @@ public class UpgradeController : MonoBehaviour
     public float UpgradeHealthAmount;
     public float UpgradeAttackSpeedAmount = 1;
 
+    public float Price;
+    public GameManager GameManager;
     public Button Button;
 
     public void Start()
@@ -21,6 +23,12 @@ public class UpgradeController : MonoBehaviour
     }
     private void Upgrade()
     {
+        if (GameManager.CurrentCoinsAmount < Price)
+        {
+            return;
+        }
+
+        GameManager.CurrentCoinsAmount -= Price;
         BulletPrefab.GetComponent<Bullet>().DamageAmount += UpgradeDamageAmount;
         BulletPrefab.GetComponent<Bullet>().MoveSpeed *= UpgradeAttackSpeedAmount;
         
