@@ -8,25 +8,27 @@ public class TowerHealthController : MonoBehaviour
     public int MaxHealth;
     public Slider HealthSlider;
 
-    private float currentHealth;
+    public float CurrentHealth;
+
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = MaxHealth;
+        CurrentHealth = MaxHealth;
         
         HealthSlider.maxValue = MaxHealth;
-        HealthSlider.value = currentHealth;
+        HealthSlider.value = CurrentHealth;
     }
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        CurrentHealth -= damage;
+        if (CurrentHealth <= 0)
         {
-            currentHealth = 0;
+            CurrentHealth = 0;
             gameObject.SetActive(false);
         }
 
-        HealthSlider.value = currentHealth;
+        HealthSlider.value = CurrentHealth;
     }
+    
 }
