@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 5765688378237488058}
-  MoveSpeed: 10
-  DamageAmount: 10
+  MoveSpeed: 20
+  DamageAmount: 20

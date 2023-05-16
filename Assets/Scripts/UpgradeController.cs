@@ -29,8 +29,7 @@ public class UpgradeController : MonoBehaviour
         }
 
         GameManager.CurrentCoinsAmount -= Price;
-        BulletPrefab.GetComponent<Bullet>().DamageAmount += UpgradeDamageAmount;
-        BulletPrefab.GetComponent<Bullet>().MoveSpeed *= UpgradeAttackSpeedAmount;
+        BulletPrefab.GetComponent<Bullet>().UpgradeChars(UpgradeAttackSpeedAmount, UpgradeDamageAmount);
         
         foreach (var tower in Towers)
         {

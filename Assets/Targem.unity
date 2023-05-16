@@ -4210,7 +4210,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 2038137921}
-  BulletPrefab: {fileID: 5170023625780188268, guid: e85e200ce23a0a9479d801025c7b4257, type: 3}
+  BulletPrefab: {fileID: 3068798619563508755, guid: 7fc1e6ba6685c1a439da7ca61ac607ae, type: 3}
   UpgradeDamageAmount: 10
   UpgradeHealthAmount: 0
   UpgradeAttackSpeedAmount: 1
@@ -5766,7 +5766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2327ff0b246a08847b4882552e1f3b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 5170023625780188268, guid: e85e200ce23a0a9479d801025c7b4257, type: 3}
+  BulletPrefab: {fileID: 3068798619563508755, guid: 7fc1e6ba6685c1a439da7ca61ac607ae, type: 3}
   BulletSpawnPoint: {fileID: 1754369051}
   TimeBetweenSpawn: 1
   CurrTower: {fileID: 976677531}
@@ -6034,7 +6034,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 2038137921}
-  BulletPrefab: {fileID: 5170023625780188268, guid: e85e200ce23a0a9479d801025c7b4257, type: 3}
+  BulletPrefab: {fileID: 3068798619563508755, guid: 7fc1e6ba6685c1a439da7ca61ac607ae, type: 3}
   UpgradeDamageAmount: 0
   UpgradeHealthAmount: 100
   UpgradeAttackSpeedAmount: 1
@@ -11102,7 +11102,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 2038137921}
-  BulletPrefab: {fileID: 5170023625780188268, guid: e85e200ce23a0a9479d801025c7b4257, type: 3}
+  BulletPrefab: {fileID: 3068798619563508755, guid: 7fc1e6ba6685c1a439da7ca61ac607ae, type: 3}
   UpgradeDamageAmount: 0
   UpgradeHealthAmount: 0
   UpgradeAttackSpeedAmount: 1.5

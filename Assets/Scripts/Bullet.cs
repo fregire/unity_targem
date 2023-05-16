@@ -32,4 +32,10 @@ public class Bullet : MonoBehaviour
     {
         
     }
+
+    public void UpgradeChars(float dtMoveSpeed, float dtDamageAmount)
+    {
+        MoveSpeed *= dtMoveSpeed;        
+        DamageAmount += dtDamageAmount;
+    }
 }
