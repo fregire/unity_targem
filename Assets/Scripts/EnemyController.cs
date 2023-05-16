@@ -66,11 +66,13 @@ public class EnemyController : MonoBehaviour
         }
         
         target = findClosestTarget();
-        bool reachedTargetEnd = Vector3.Distance(transform.position, target.transform.position) <= AttackRange;
+        var actualTargetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+        bool reachedTargetEnd = Vector3.Distance(transform.position, actualTargetPosition) <= AttackRange;
+        
         if (!reachedTargetEnd)
         {
-            transform.LookAt(target.transform);
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, MoveSpeed * Time.deltaTime);
+            transform.LookAt(actualTargetPosition);
+            transform.position = Vector3.MoveTowards(transform.position, actualTargetPosition, MoveSpeed * Time.deltaTime);
             return;
         }
         

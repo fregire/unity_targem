@@ -18,10 +18,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyHealthController>().TakeDamage(DamageAmount);
         }
+        
         Destroy(gameObject);
     }
 

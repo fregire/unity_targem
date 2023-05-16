@@ -1348,8 +1348,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.7
+  m_Height: 2.03
   m_Direction: 1
   m_Center: {x: 0, y: 0.85, z: 0.19}
 --- !u!114 &2414711916336982930
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820e9c8078ef7ac4a8ea0f70497b5320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalHealth: 200
+  TotalHealth: 100
   HealthBar: {fileID: 995293118}
 --- !u!1 &3315906018724031638
 GameObject:
